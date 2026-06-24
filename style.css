@@ -1,0 +1,102 @@
+/* Deep charcoal/black luxury theme background */
+html {
+  font-family: 'Georgia', serif;
+  background-color: #0b0c10;
+  color: #c5a880; /* Subtle gold/champagne text color */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+body {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* Square container with rounded edges */
+.full-img {
+  position: relative;
+  width: 500px;
+  height: 500px; /* Perfect square */
+  border-radius: 24px;
+  overflow: hidden; /* Clips the child images & overlays to the rounded border */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(197, 168, 128, 0.2); /* Soft gold accent border */
+}
+
+.displayed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Forces the landscape/portrait image to perfectly fill the square */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  transition: background-color 0.3s ease;
+  pointer-events: none; /* Allows clicks to pass through to elements underneath if needed */
+}
+
+button {
+  border: 1px solid #c5a880;
+  background: rgba(11, 12, 16, 0.8);
+  color: #c5a880;
+  font-family: inherit;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #c5a880;
+  color: #0b0c10;
+}
+
+/* Thumbnails configuration layout */
+.thumb-bar {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.thumb-bar img {
+  width: calc(20% - 10px);
+  aspect-ratio: 1 / 1; /* Makes thumbnails perfect rounded squares */
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.thumb-bar img:hover {
+  opacity: 1;
+  border-color: #c5a880;
+  transform: translateY(-2px);
+}
